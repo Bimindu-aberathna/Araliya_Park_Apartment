@@ -1,6 +1,9 @@
 import React from "react";
+import MyVerticallyCenteredModal from "./Carousel/MyVerticallyCenteredModal";
 
 function Hero() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <section className="position-relative vh-100">
       <div
@@ -17,19 +20,28 @@ function Hero() {
                 className="display-3 fw-bold mb-4"
                 style={{ lineHeight: "1.2" }}
               >
-                Experience Luxury Living in Katubedda
+                Your Home Away From Home in Katubedda
               </h1>
               <p className="lead mb-5 fw-normal">
-                Discover our newly built premium apartments that blend modern
-                comfort with elegant design, creating the perfect space for your
-                family.
+                Experience short-term stays in our stylish, fully-furnished
+                apartments — perfect for holidays, business trips, or family
+                visits. Designed with comfort and convenience in mind for
+                foreigners and Sri Lankans returning home.
               </p>
               <div className="d-flex gap-3">
-                <button className="btn btn-warning btn-lg px-4 py-3 fw-semibold">
-                  View Apartments
+                <button
+                  className="btn btn-warning btn-lg px-4 py-3 fw-semibold"
+                  onClick={() => setModalShow(true)}
+                >
+                  Explore Apartments
                 </button>
+
+                <MyVerticallyCenteredModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />
                 <button className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold">
-                  Take a Tour
+                  Reserve Now
                 </button>
               </div>
             </div>
