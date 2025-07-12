@@ -5,13 +5,13 @@ import NavigationBar from './Navbar';
 import Hero from './Hero';
 
 // Lazy load components that are not immediately visible
-const About = lazy(() => import('./About'));
-const FeatureCards = lazy(() => import('./Components/FeatureCards'));
-const Contact = lazy(() => import('./Contact'));
-const Footer = lazy(() => import('./Components/Footer'));
-const ScrollTop = lazy(() => import('./ScrollTop'));
-const ViewModal = lazy(() => import('./Components/Modal/View_Modal'));
-const WhatsApp_contact = lazy(() => import('./WhatsApp_contact'));
+const About = lazy(() => import('./About').catch(() => ({ default: () => <div>Error loading About</div> })));
+const FeatureCards = lazy(() => import('./Components/FeatureCards').catch(() => ({ default: () => <div>Error loading FeatureCards</div> })));
+const Contact = lazy(() => import('./Contact').catch(() => ({ default: () => <div>Error loading Contact</div> })));
+const Footer = lazy(() => import('./Components/Footer').catch(() => ({ default: () => <div>Error loading Footer</div> })));
+const ScrollTop = lazy(() => import('./ScrollTop').catch(() => ({ default: () => <div>Error loading ScrollTop</div> })));
+const ViewModal = lazy(() => import('./Components/Modal/View_Modal').catch(() => ({ default: () => <div>Error loading ViewModal</div> })));
+const WhatsApp_contact = lazy(() => import('./WhatsApp_contact').catch(() => ({ default: () => <div>Error loading WhatsApp_contact</div> })));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -29,9 +29,16 @@ function Home() {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [imageModal, setImageModal] = useState(false);
+  const [error, setError] = useState(null);
 
   // Memoize callback functions to prevent unnecessary re-renders
-  const handleModalClose = useCallback(() => setShowModal(false), []);
+   const handleModalClose = useCallback(() => {
+    try {
+      setShowModal(false);
+    } catch (err) {
+      setError(err.message);
+    }
+  }, []);
   
   const modalProps = useMemo(() => ({
     show: showModal,
