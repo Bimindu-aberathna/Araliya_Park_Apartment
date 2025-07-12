@@ -1,6 +1,11 @@
 import React from "react";
+import ViewModal from "./Components/Modal/View_Modal";
 
-function Hero() {
+function Hero(props) {
+  function handleViewApartments() {
+    props.setShowModal(true);
+    props.setImageModal(true);
+  }
   return (
     <section className="position-relative vh-100">
       <div
@@ -24,11 +29,14 @@ function Hero() {
                 comfort with elegant design, creating the perfect space for your
                 family.
               </p>
-              <div className="d-flex gap-3">
-                <button className="btn btn-warning btn-lg px-4 py-3 fw-semibold">
+              <div className="d-flex flex-column flex-sm-row gap-3">
+                <button
+                  className="btn btn-warning btn-lg btn-md-lg px-3 px-md-4 py-2 py-md-3 fw-semibold"
+                  onClick={handleViewApartments}
+                >
                   View Apartments
                 </button>
-                <button className="btn btn-outline-light btn-lg px-4 py-3 fw-semibold">
+                <button className="btn btn-outline-light btn-lg btn-md-lg px-3 px-md-4 py-2 py-md-3 fw-semibold" disabled>
                   Take a Tour
                 </button>
               </div>

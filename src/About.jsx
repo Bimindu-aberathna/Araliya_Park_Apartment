@@ -45,9 +45,6 @@ function About() {
                 </div>
               </div>
             </div>
-            <button className="btn btn-warning btn-lg px-4 py-3 fw-semibold">
-              Learn More
-            </button>
           </div>
         </div>
       </div>

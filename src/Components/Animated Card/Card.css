@@ -1,0 +1,219 @@
+.Anicard {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 0 0;
+  max-width: 50ch;
+  height: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  transition: all 500ms ease;
+}
+
+.Anicard:hover .card-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.Anicard:hover,
+.Anicard:focus-within {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.icon-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.iconBackground {
+  background: linear-gradient(135deg, #d2a331 0%, #f4c430 100%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 
+    0 8px 16px rgba(210, 163, 49, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.Anicard:hover .iconBackground {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 
+    0 12px 20px rgba(210, 163, 49, 0.4),
+    0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.Anicard-content {
+  position: relative;
+  z-index: 2;
+  --padding: 2rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Anicard-title {
+  position: relative;
+  width: max-content;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Anicard-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: calc(100% + var(--padding));
+  left: calc(var(--padding) * -1);
+  bottom: -8px;
+  background: linear-gradient(90deg, #d2a331 0%, #f4c430 100%);
+  transform-origin: left;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(210, 163, 49, 0.3);
+}
+
+.Anicard:hover .Anicard-title::after,
+.Anicard:focus-within .Anicard-title::after {
+  transform: scaleX(1);
+}
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #d2a331 0%, #f4c430 100%);
+  padding: 0.75em 1.5em;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  transition: all 300ms ease;
+  box-shadow: 
+    0 4px 6px rgba(210, 163, 49, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 600ms ease;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:hover,
+.button:focus {
+  background: linear-gradient(135deg, #f4c430 0%, #d2a331 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 12px rgba(210, 163, 49, 0.35),
+    0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.Anicard-body {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Hover animations */
+@media (hover) {
+  .Anicard-content {
+    transform: translateY(50%);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .Anicard-content > *:not(.Anicard-title) {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 500ms ease;
+  }
+
+  .Anicard:hover .Anicard-content > *:not(.Anicard-title),
+  .Anicard:focus-within .Anicard-content > *:not(.Anicard-title) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 200ms;
+  }
+
+  .Anicard:hover .Anicard-content,
+  .Anicard:focus-within .Anicard-content {
+    transform: translateY(0);
+    transition-delay: 100ms;
+  }
+
+  .Anicard-title::after {
+    transform: scaleX(0);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}

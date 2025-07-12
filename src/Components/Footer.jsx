@@ -6,7 +6,7 @@ function Footer() {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6 text-center text-md-start">
-            <span className="fw-semibold">© 2024 Katubedda Residences</span>
+            <span className="fw-semibold">© 2025 Katubedda Residences</span>
           </div>
           <div className="col-md-6 text-center text-md-end mt-3 mt-md-0">
             <div className="d-flex justify-content-center justify-content-md-end gap-4">

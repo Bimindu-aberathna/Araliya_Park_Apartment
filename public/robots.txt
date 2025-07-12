@@ -1,3 +1,61 @@
+# Araliya Park Apartment - Premium Apartments in Katubedda, Moratuwa
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Explicitly allow important pages for SEO
+Allow: /about
+Allow: /contact
+Allow: /apartments
+Allow: /facilities
+Allow: /location
+Allow: /pricing
+Allow: /gallery
+
+# Allow all image and asset files
+Allow: /static/
+Allow: /images/
+Allow: /assets/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.css
+Allow: /*.js
+
+# Block only sensitive areas (none for now, but good practice)
+Disallow: /admin/
+Disallow: /private/
+
+# Encourage frequent crawling for real estate content
+Crawl-delay: 0
+
+# Major search engines - explicitly welcome
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+# Block AI training bots but allow indexing bots
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Sitemap for better indexing (update after deployment)
+Sitemap: https://araliya-park-apartment.vercel.app/sitemap.xml
+
+# Additional sitemaps for different content types
+Sitemap: https://araliya-park-apartment.vercel.app/sitemap-images.xml
