@@ -1,5 +1,3 @@
-import { ChevronsUp } from "lucide-react";
-import React, { useState } from "react";
 const whatsappIcon = require("../src/Assets/Araliya-park/whatsapp_logo.png");
 
 function WhatsApp_contact() {

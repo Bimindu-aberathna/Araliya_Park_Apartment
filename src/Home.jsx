@@ -11,7 +11,7 @@ const Contact = lazy(() => import('./Contact').catch(() => ({ default: () => <di
 const Footer = lazy(() => import('./Components/Footer').catch(() => ({ default: () => <div>Error loading Footer</div> })));
 const ScrollTop = lazy(() => import('./ScrollTop').catch(() => ({ default: () => <div>Error loading ScrollTop</div> })));
 const ViewModal = lazy(() => import('./Components/Modal/View_Modal').catch(() => ({ default: () => <div>Error loading ViewModal</div> })));
-const WhatsApp_contact = lazy(() => import('./WhatsApp_contact').catch(() => ({ default: () => <div>Error loading WhatsApp_contact</div> })));
+const WhatsAppContact = lazy(() => import('./WhatsApp_contact').catch(() => ({ default: () => <div>Error loading WhatsAppContact</div> })));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -29,7 +29,7 @@ function Home() {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [imageModal, setImageModal] = useState(false);
-  const [error, setError] = useState(null);
+  const [setError] = useState(null);
 
   // Memoize callback functions to prevent unnecessary re-renders
    const handleModalClose = useCallback(() => {
@@ -38,7 +38,7 @@ function Home() {
     } catch (err) {
       setError(err.message);
     }
-  }, []);
+  }, [setError]);
   
   const modalProps = useMemo(() => ({
     show: showModal,
@@ -84,7 +84,7 @@ function Home() {
       
       {/* Load interactive elements with Suspense */}
       <Suspense fallback={null}>
-        <WhatsApp_contact />
+        <WhatsAppContact />
       </Suspense>
       
       <Suspense fallback={null}>

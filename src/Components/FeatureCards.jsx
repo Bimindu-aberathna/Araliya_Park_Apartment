@@ -1,5 +1,4 @@
-import { Car, Coffee, Home, Star } from "lucide-react";
-import React, { use, useEffect } from "react";
+import { Coffee, Home, Star } from "lucide-react";
 import Card from "./Animated Card/Card";
 
 
@@ -35,10 +34,7 @@ const cardData = [
     ];
 
 function FeatureCards({ setShowModal, setModalContent, setImageModal }) {
-  useEffect(() => {
-    setImageModal(false);
-    setModalContent(null);
-  }, []);
+
   return (
     <section className="py-5 position-relative" style={{ marginTop: "-100px" }}>
       <div className="container">

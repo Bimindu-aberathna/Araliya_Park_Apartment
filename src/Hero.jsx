@@ -1,6 +1,3 @@
-import React from "react";
-import ViewModal from "./Components/Modal/View_Modal";
-
 function Hero(props) {
   function handleViewApartments() {
     props.setShowModal(true);

@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Home.css";
 const logo = require("./Assets/Araliya-park/logo.jpg");
 
@@ -42,7 +41,7 @@ function NavigationBar(props) {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" style={{ fontFamily: 'cursive', fontSize: '22px', fontWeight: 'bold' }}>
             <Nav.Link onClick={() => window.scrollTo({ top:document.body.scrollHeight, behavior: "smooth" })}>Contact</Nav.Link>
             <Nav.Link 
             onClick={handlePricing}
