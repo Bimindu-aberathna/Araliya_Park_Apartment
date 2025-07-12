@@ -4,10 +4,9 @@ const whatsappIcon = require("../src/Assets/Araliya-park/whatsapp_logo.png");
 
 function WhatsApp_contact() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "94773406398";
     const message = "Hello! I'm asking about Araliya Park Apartment. I would like to know more details.";
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    const whatsappUrl = process.env.REACT_APP_WHATSAPP_LINK + `?text=${encodedMessage}`;
     
     window.location.href = whatsappUrl;
   };
