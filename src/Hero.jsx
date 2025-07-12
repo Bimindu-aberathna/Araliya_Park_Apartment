@@ -22,12 +22,13 @@ function Hero(props) {
                 className="display-3 fw-bold mb-4"
                 style={{ lineHeight: "1.2" }}
               >
-                Experience Luxury Living in Katubedda
+                Your Home Away From Home in Katubedda
               </h1>
               <p className="lead mb-5 fw-normal">
-                Discover our newly built premium apartments that blend modern
-                comfort with elegant design, creating the perfect space for your
-                family.
+                Experience short-term stays in our stylish, fully-furnished
+                apartments — perfect for holidays, business trips, or family
+                visits. Designed with comfort and convenience in mind for
+                foreigners and Sri Lankans returning home.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3">
                 <button
