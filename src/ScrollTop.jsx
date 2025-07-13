@@ -1,8 +1,5 @@
 import { ChevronsUp } from "lucide-react";
 import React, { useState } from "react";
-const WhatsappIcon = require("./Assets/Araliya-park/WhatsappIcon.png");
-//import whatsapp link from env
-const whatsappLink = process.env.REACT_APP_WHATSAPP_LINK || null;
 
 function ScrollTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,24 +15,7 @@ function ScrollTop() {
   window.addEventListener("scroll", toggleVisibility);
   return (
     <div className="container">
-      <div
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          left: "20px",
-          cursor: "pointer",
-          padding: "10px",
-        }}
-        //redirect to whatsapp
-        onClick={() => window.open(whatsappLink, "_blank")
-        }
-      >
-        <img
-          alt="Chat on WhatsApp"
-          src={WhatsappIcon}
-          style={{ objectFit: "contain", width: "40px", height: "40px" }}
-        />
-      </div>
+      
 
       <div
         style={{

@@ -1,5 +1,16 @@
+import { useState } from 'react';
+import './Hero.css';
 function Hero(props) {
+  const [loading, setLoading] = useState(false);
+
+  const handleImageLoad = async () => {
+    setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    setLoading(false);
+  }
+
   function handleViewApartments() {
+    handleImageLoad();
     props.setShowModal(true);
     props.setImageModal(true);
   }
@@ -30,9 +41,10 @@ function Hero(props) {
               <div className="d-flex flex-column flex-sm-row gap-3">
                 <button
                   className="btn btn-warning btn-lg btn-md-lg px-3 px-md-4 py-2 py-md-3 fw-semibold"
+                  id="view-apartments-btn"
                   onClick={handleViewApartments}
                 >
-                  View Apartments
+                 {loading ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : 'View Apartments'}
                 </button>
                 <button className="btn btn-outline-light btn-lg btn-md-lg px-3 px-md-4 py-2 py-md-3 fw-semibold" disabled>
                   Take a Tour

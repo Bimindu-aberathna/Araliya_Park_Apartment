@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
 import './Contact.css';
+import ContactCard from "./Components/Contact_Card/ContactCard";
 
 function Contact() {
   return (
@@ -16,7 +17,7 @@ function Contact() {
           </div>
         </div>
         <div className="row g-4 justify-content-center">
-          <div className="col-md-4">
+          {/* <div className="col-md-4">
             <div
               className="card h-100 border-0 shadow-lg p-4"
               style={{ borderRadius: "20px" }}
@@ -31,8 +32,14 @@ function Contact() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-md-4">
+          </div> */}
+          <ContactCard
+            title="Call Us"
+            link="tel:+94773406398"
+            linkText="+94 77 340 6398"
+            icon={Phone}
+          />
+          {/* <div className="col-md-4">
             <div
               className="card h-100 border-0 shadow-lg p-4"
               style={{ borderRadius: "20px" }}
@@ -49,8 +56,14 @@ function Contact() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-md-4">
+          </div> */}
+          <ContactCard
+            title="Email Us"
+            link="mailto:araliyaparkkatubedda@gmail.com"
+            linkText="araliyaparkkatubedda@gmail.com"
+            icon={Mail}
+          />
+          {/* <div className="col-md-4">
             <div
               className="card h-100 border-0 shadow-lg p-4"
               style={{ borderRadius: "20px" }}
@@ -71,7 +84,13 @@ function Contact() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
+          <ContactCard
+            title="Visit Us"
+            link="https://maps.app.goo.gl/AGJvNTxVpJmMmqZ79"
+            linkText="27/7,1st lane, Bandaranayake mawatha, Katubedda, Sri Lanka."
+            icon={MapPin}
+          />
         </div>
       </div>
     </section>
