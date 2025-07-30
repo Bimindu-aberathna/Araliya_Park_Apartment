@@ -54,8 +54,5 @@ Disallow: /
 User-agent: GPTBot
 Disallow: /
 
-# Sitemap for better indexing (update after deployment)
-Sitemap: https://araliya-park-apartment.vercel.app/sitemap.xml
-
-# Additional sitemaps for different content types
-Sitemap: https://araliya-park-apartment.vercel.app/sitemap-images.xml
+# Sitemap for better indexing - UPDATE THIS LINE
+Sitemap: https://araliya-park-apartment-6z7t.vercel.app/sitemap.xml
