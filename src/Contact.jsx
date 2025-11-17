@@ -4,6 +4,17 @@ import './Contact.css';
 import ContactCard from "./Components/Contact_Card/ContactCard";
 
 function Contact() {
+
+  function copyText(textToCopy) {
+  navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      alert("Copied the text: " + textToCopy);
+    })
+    .catch(err => {
+      alert("Failed to copy: " + err);
+    });
+}
+  
   return (
     <section className="py-5">
       <div className="container py-5">
@@ -62,6 +73,7 @@ function Contact() {
             link="mailto:araliyaparkapartments@gmail.com"
             linkText="araliyaparkapartments@gmail.com"
             icon={Mail}
+            onClick={()=>copyText("araliyaparkapartments@gmail.com")}
           />
           {/* <div className="col-md-4">
             <div
