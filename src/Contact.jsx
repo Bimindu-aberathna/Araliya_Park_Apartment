@@ -59,8 +59,8 @@ function Contact() {
           </div> */}
           <ContactCard
             title="Email Us"
-            link="mailto:araliyaparkkatubedda@gmail.com"
-            linkText="araliyaparkkatubedda@gmail.com"
+            link="mailto:araliyaparkapartments@gmail.com"
+            linkText="araliyaparkapartments@gmail.com"
             icon={Mail}
           />
           {/* <div className="col-md-4">
