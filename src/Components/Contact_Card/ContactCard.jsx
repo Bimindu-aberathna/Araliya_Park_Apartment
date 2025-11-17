@@ -7,9 +7,8 @@ function ContactCard({title,link,linkText,icon:Icon}) {
       id="contact-card"
         className="card h-100 border-0 shadow-lg p-4"
         style={{ borderRadius: "20px" ,cursor: "pointer" }}
-        onClick={() => window.location.href = link}
       >
-        <div className="card-body text-center">
+        <div className="card-body text-center" onClick={() => window.location.href = link}>
           <div className="contact-icon">
             <Icon color="white" size={24} />
           </div>
